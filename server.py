@@ -1,21 +1,17 @@
 """dinosource code"""
 
 #imports - standard lib
-import lxml.html
 import os
-import re
 import requests
 
 #imports - flask
 from flask import Flask, render_template, redirect, request, flash, session, jsonify, url_for
 from flask_debugtoolbar import DebugToolbarExtension
-
-#imports - 3rd party
-from bs4 import BeautifulSoup
 from jinja2 import StrictUndefined
 from werkzeug import secure_filename
 
 #imports - local
+from helper_functions import turn_to_soup, track_element_frequencies, add_span_tags
 
 
 #app config
@@ -47,24 +43,19 @@ def parse_url():
 			return redirect('/')
 		
 		if r: 
+			soup_html = turn_to_soup(r)
+			histogram = track_element_frequencies(soup_html)
 			
-			# use beautiful soup to parse
-			raw_html = BeautifulSoup(r.text)
-			source_code = raw_html.prettify(formatter=None)
+			html_with_spans = add_span_tags(soup_html)
 			
-			# dictionary to track tag frequency
-			tag_dict = {}
-			i = 1
-			for tag in raw_html.find_all(True):
-				if tag.name not in tag_dict.keys():
-					tag_dict[tag.name] = i 
-				else: 
-					tag_dict[tag.name] = tag_dict[tag.name] + 1
-					
-			print tag_dict
+			print histogram
+			print html_with_spans
 			
 			
-	return render_template('dinosource.html', source_code=source_code)
+			
+			
+			
+	return render_template('dinosource.html', raw_html=raw_html)
 
 
 if __name__ == "__main__":
