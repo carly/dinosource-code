@@ -2,19 +2,27 @@
 <!--Base Template -->
 <html>
 <head>
- <title>//source_code</title>
- <link href='https://fonts.googleapis.com/css?family=Monoton|Codystar|Londrina+Outline|Londrina+Shadow|VT323|Roboto+Mono:400,100|Orbitron:400,900|Montserrat+Alternates:400,700|Lekton|Montserrat+Subrayada:400,700|Rubik+Mono+One' rel='stylesheet' type='text/css'>
- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
- {% block css %}{% endblock %} 
-</head>
 
+ <title>{% block title %} //dinosource_code {% endblock %}</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="/static/css/styles.css">
+</head>
 <body>
 
+{% for flash in get_flashed_messages() %}
+  <div class="alert alert-danger" style="width:90%; margin:0 auto;">
+   		{{ flash }}
+  </div>
+{% endfor %}
 
-{% block content %}  {% endblock %}
+{% block content %}
+
+{% endblock %}
 
 
 

@@ -1,21 +1,21 @@
-"""dinosource code"""
+"""dinosource code server"""
 
 #imports - standard lib
 import os
 import requests
 
 #imports - flask
-from flask import Flask, render_template, redirect, request, flash, session, jsonify, url_for
+from flask import Flask, render_template, redirect, request, flash, jsonify, Markup
 from flask_debugtoolbar import DebugToolbarExtension
 from jinja2 import StrictUndefined
-from werkzeug import secure_filename
 
 #imports - local
-from helper_functions import turn_to_soup, track_element_frequencies, add_span_tags
+from helper_functions import turn_to_soup, track_element_frequencies, cgi_escaped_html, add_span_class, add_span_tags
 
 
 #app config
 app = Flask(__name__)
+
 
 app.secret_key="""SuperSecret"""
 app.jinja_env.undefined = StrictUndefined
@@ -36,26 +36,28 @@ def parse_url():
 		# get url that person has entered
 		try: 
 			url = request.form.get("parse-url")
-			r = requests.get(url)
+			html = requests.get(url)
 			
 		except (requests.exceptions.ConnectionError, requests.exceptions.InvalidURL):
 			flash('Roar. Invalid URL or Connection Error. Try again plz.')
 			return redirect('/')
 		
-		if r: 
-			soup_html = turn_to_soup(r)
-			histogram = track_element_frequencies(soup_html)
+		if html: 
 			
-			html_with_spans = add_span_tags(soup_html)
+			# code to create summary table
+			soup_html = turn_to_soup(html)
+			summary = track_element_frequencies(soup_html)
 			
-			print histogram
-			print html_with_spans
+			# prep html for display 
+			html_to_encode = html.text
+			cgi_html = cgi_escaped_html(html_to_encode)
+			source_code = Markup(add_span_tags(cgi_html))
 			
 			
-			
-			
-			
-	return render_template('dinosource.html', raw_html=raw_html)
+				
+	return render_template('dinosource.html', summary=summary, source_code=source_code)
+
+
 
 
 if __name__ == "__main__":

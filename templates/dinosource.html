@@ -1,25 +1,59 @@
 {% extends 'base.html' %}
 
-
-{% block css%}
-<link rel="stylesheet" href="/static/css/dino.css">
-{% endblock %}
-
+{% block title %} //dinosource {% endblock %}
 
 {% block content %}
 
-<h1>//dinosource_code</h1>
-
-<div class="sc">
+<div class="main">
  <div class="container">
   <div class="row">
-   <div class="col-md-6">
+    <div class="col-md-4 col-md-offset-3">
+   
+	<h1>//dinosource_code</h1>
+  
+    </div><!--col-md-4 col-md-offset-3-->
+   </div><!--closes row-->
 
-	{{ soup_html }}
 
-   </div><!--closes col-md-6"-->
-  </div><!--closes row-->
- </div><!--closes container-->
-</div><!--closes sc-->
+ 	<div class="row">
+ 	 
+ 	 <div class="col-md-5">
+ 	  <h3>Dinosource t-eggz</h3>
+ 	  <div id="summary" class="table-responsive">
+ 	   
+ 	   <table class="table table-hover">
+ 	   	<thead>
+ 	   	  <tr>
+ 	   	  	<th>element-o-sourus</th>
+ 	   	  	<th>frequency </th>
+ 	   	  </tr>
+		</thead>
+	    <tbody>
+	    {% for element, frequency in summary.items() %}
+	     <tr>
+	     	<td class="element">{{element}}</td>
+	     	<td>{{frequency}}</td>
+	     </tr>
+	   	{% endfor %}
+	    </tbody>
+ 	   </table>
+ 	  	
+ 	  </div><!--closes summary-->
+ 	 </div><!--closes col-md-5-->
+  	 
+   	 <div class="col-md-7">
+      <div id="sc_box">
+
+		{{ source_code }}
+  	
+   	  </div><!--closes sc_box-->
+   	 </div><!--closes col-md-7"-->
+ 
+ 	</div><!--closes row-->
+   
+  </div><!--closes container-->
+ </div><!--closes main-->
+
+
 
 {% endblock %}
