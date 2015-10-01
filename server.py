@@ -16,6 +16,7 @@ from helper_functions import turn_to_soup, track_element_frequencies, cgi_escape
 #app config
 app = Flask(__name__)
 
+PORT = int(os.environ.get("PORT", 5000))
 
 app.secret_key="""DinosourWhispers"""
 app.jinja_env.undefined = StrictUndefined
@@ -66,9 +67,8 @@ def parse_url():
 
 if __name__ == "__main__":
 	#debug=True for DebugToolbarExtension to work
-	app.debug = True
 
 	#Use the DebugToolbar
 	DebugToolbarExtension(app)
 	print "\n\n\n\nYO\n\n\n"
-	app.run()
+	app.run(debug=True, host="0.0.0.0", port=PORT)
