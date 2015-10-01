@@ -32,6 +32,7 @@ passed to the 'requests' .get() function which returns an html Response object.
 <h3>Getting to the Source Code | The Parse </h3>
 
 After checking to make sure the url is valid, the parse_url() function performs two operations on the Response object:
+
 1. Creates a histogram style table to track element frequencies
 	- Helper functions: 
 		- Generate a Beautiful Soup object
