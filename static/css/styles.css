@@ -1,7 +1,52 @@
+/* index.html */
+body {
+	font-family: 'Anonymous Pro', ;
+}
+
+img {
+	margin-left: 50px;
+}
+
+#field-url, label {
+	margin-left: 120px;
+}
+
+#submit {
+	margin-left: 150px;
+	border: 1px solid #41b93f;
+	background-color: #41b93f;
+	padding: 10px 20px;
+	border-radius: 25px;
+	color: white;
+}
+
+#submit:hover {
+	border: 1px solid #FF7B62;
+	background-color: #FF7B62;
+	
+}
+
+.nerd {
+	border-radius: 100px;
+}
+
+h1 {
+  	font-family: 'Nosifer', cursive;
+	color:#41b93f;
+	margin-top: 50px;
+	
+}
 
 
+/* dinosource.html */
 
 #sc_box {
-  overflow: scroll;
-  height: 800px;
+  	overflow: scroll;
+  	height: 800px;
+	margin-top: 70px;
+}
+
+.highlight {
+  color: white;
+  background-color: #FF9900;
 }

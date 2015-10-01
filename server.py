@@ -53,9 +53,9 @@ def parse_url():
 			cgi_html = cgi_escaped_html(html_to_encode)
 			source_code = Markup(add_span_tags(cgi_html))
 			
-			
+			website_url = url[7:]
 				
-	return render_template('dinosource.html', summary=summary, source_code=source_code)
+	return render_template('dinosource.html', summary=summary, source_code=source_code, website_url=website_url)
 
 
 
