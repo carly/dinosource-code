@@ -1,7 +1,7 @@
 # dinosource-code
 
-Have you seen the dinosaurs? Have you seen source code? No idea...? Never fear //dinosource-code is here.<br>
-//dinosource-code enables users to analyze the underlying html structure of their favorite websites. <br>
+Have you seen the dinosaurs? Have you seen source code? No idea...? Never fear //dinosource-code is here.
+//dinosource-code enables users to analyze the underlying html structure of their favorite websites. 
  
 
 ![alt tag](https://raw.github.com/carly/dinosource-code/master/static/img/dino2.jpg)
@@ -47,10 +47,10 @@ After checking to make sure the url is valid, the parse_url() function performs 
 		
 		
 <h3>Challenges</h3>
-The greatest challenge was figuring out how to wrap each element in the html with a customized span tag. <br>
-First, I tried using BeautifulSoup's wrap() method. However, after experiencing extremely slow render time and <br>
-realizing the added spans will only behave as Markup if the inital html response was properly encoded, I started <br>
-looking at other options. After reading documentation on lxml, ElementSoup, CGI and Regex, I decided to use CGI <br>
+The greatest challenge was figuring out how to wrap each element in the html with a customized span tag. 
+First, I tried using BeautifulSoup's wrap() method. However, after experiencing extremely slow render time and 
+realizing the added spans will only behave as Markup if the inital html response was properly encoded, I started 
+looking at other options. After reading documentation on lxml, ElementSoup, CGI and Regex, I decided to use CGI 
 and Regex over BeautifulSoup to add spans after considering factors of relative ease of implementation and efficiency. 
 
 <h4>Future Improvements</h4>
