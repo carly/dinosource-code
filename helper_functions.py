@@ -36,7 +36,7 @@ def track_element_frequencies(soup_html):
 	return elmt_frq
 
 def cgi_escaped_html(response_obj):
-	"""Given a string of html and parses so that re can work. 
+	"""Given a string of html, parses so that regex can work. 
 	< to &lt;
 	> to &gt;
 	& to &amp;
@@ -45,12 +45,12 @@ def cgi_escaped_html(response_obj):
 	return cgi.escape(response_obj)
 		
 
-def add_span_class(matchobj):
+def add_span_class(match_obj):
 	
 	## code to define match obj for regex subtitution
 	## trex stands for t-rex, the dinosour
-	return "<span class=\"trex-{e}\">&lt;{e}".format(e=matchobj.group(1))
-		
+	return "<span class=\"trex-{e}\">&lt;{e}".format(e=match_obj.group(1))
+
 	
 def add_span_tags(cgi_html):
 	

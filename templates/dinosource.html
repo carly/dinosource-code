@@ -19,25 +19,27 @@
  	<div class="row">
  	 
  	 <div class="col-md-5">
+ 	  
  	  <h3>Dinosourcing: {{website_url}}</h3>
- 	  <div id="summary" class="table-responsive">
  	   
- 	   <table class="table table-hover">
- 	   	<thead>
+ 	   <div id="summary" class="table-responsive">
+ 	   
+ 	    <table class="table table-hover">
+ 	   	 <thead>
  	   	  <tr>
  	   	  	<th>element-o-sourus</th>
  	   	  	<th>frequency </th>
  	   	  </tr>
-		</thead>
-	    <tbody>
+		 </thead>
+	     <tbody>
 	    {% for element, frequency in summary.items() %}
 	     <tr>
 	     	<td class="element">{{element}}</td>
 	     	<td>{{frequency}}</td>
 	     </tr>
 	   	{% endfor %}
-	    </tbody>
- 	   </table>
+	     </tbody>
+ 	    </table>
  	  	
  	  </div><!--closes summary-->
  	 </div><!--closes col-md-5-->

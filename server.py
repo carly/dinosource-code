@@ -10,14 +10,14 @@ from flask_debugtoolbar import DebugToolbarExtension
 from jinja2 import StrictUndefined
 
 #imports - local
-from helper_functions import turn_to_soup, track_element_frequencies, cgi_escaped_html, add_span_class, add_span_tags
+from helper_functions import turn_to_soup, track_element_frequencies, cgi_escaped_html, add_span_tags
 
 
 #app config
 app = Flask(__name__)
 
 
-app.secret_key="""SuperSecret"""
+app.secret_key="""DinosourWhispers"""
 app.jinja_env.undefined = StrictUndefined
 
 
@@ -30,7 +30,11 @@ def index():
 
 @app.route('/parse-url', methods=["GET", "POST"])
 def parse_url():
-	"""tbd"""
+	"""Takes url from index.html form, returns source code. 
+	
+	Parses source code to create summary table, and clean 
+	source code view.
+	"""
 	
 	if request.method == "POST":
 		# get url that person has entered
