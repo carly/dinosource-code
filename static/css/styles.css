@@ -8,7 +8,7 @@ img {
 }
 
 #field-url, label {
-	margin-left: 120px;
+	margin-left: 100px;
 }
 
 #submit {
@@ -37,6 +37,10 @@ h1 {
 	
 }
 
+footer:hover, h1:hover {
+	color: #FF7B62;
+}
+
 footer {
   margin-top: 300px;
   text-align: center;
@@ -45,6 +49,7 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
 
 /* dinosource.html */
 
