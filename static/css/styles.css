@@ -37,6 +37,14 @@ h1 {
 	
 }
 
+footer {
+  margin-top: 300px;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
 /* dinosource.html */
 
