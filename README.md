@@ -2,6 +2,8 @@
 
 Have you seen the dinosaurs? Have you seen source code? No idea...? Never fear //dinosource-code is here.
 //dinosource-code enables users to analyze the underlying html structure of their favorite websites. 
+
+https://dinosource-code.herokuapp.com/
  
 
 ![alt tag](https://raw.github.com/carly/dinosource-code/master/static/img/dino2.jpg)
@@ -11,6 +13,8 @@ Simply enter a URL, and a friendly dinosour will perform the following magic: <b
 - Display the "source code" of the requested URL. <br>
 - Generate a table detailing the frequency of each HTML element for a given webpage.<br>
 - Highlight a table element and its corresponding appearances in the html upon mouseclick.</p>
+<br>
+<br>
 
 ![alt tag](https://raw.github.com/carly/dinosource-code/master/static/img/highlightdino.jpg)
 
